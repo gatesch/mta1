@@ -5,7 +5,7 @@ RUN apt-get install default-jdk -y
 RUN useradd -r tomcat9 --shell /bin/false
 RUN apt-get install wget iputils-ping -y
 RUN cd /opt && \
-    wget https://github.com/gatesch/mta1/tree/master/tomcat/apache-tomcat-9.0.0.M22.tar.gz && \
+    wget https://github.com/gatesch/mta1/tree/master/tomcat/apache-tomcat-9.0.0.M22.tar && \
     tar -xvf apache-tomcat-9.0.0.M22.tar && \
     ln -s apache-tomcat-9.0.0.M22 tomcat && \
     chown -hR tomcat9: tomcat apache-tomcat-9.0.0.M22
