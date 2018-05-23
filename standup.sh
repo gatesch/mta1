@@ -1,3 +1,4 @@
+#!/bin/bash
 docker build -t db ./db
 docker build -t tomcat ./tomcat
 docker network create atsea

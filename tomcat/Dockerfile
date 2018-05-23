@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 RUN apt-get update
 RUN apt-get install default-jdk -y
 RUN useradd -r tomcat9 --shell /bin/false
-RUN apt-get install wget -y
+RUN apt-get install wget iputils-ping -y
 RUN cd /opt && \
     wget http://archive.apache.org/dist/tomcat/tomcat-9/v9.0.0.M22/bin/apache-tomcat-9.0.0.M22.tar.gz && \
     tar -zxf apache-tomcat-9.0.0.M22.tar.gz && \
