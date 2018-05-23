@@ -5,13 +5,13 @@ RUN apt-get install default-jdk -y
 RUN useradd -r tomcat9 --shell /bin/false
 RUN apt-get install wget iputils-ping -y
 RUN cd /opt && \
-    wget https://github.com/gatesch/mta1/tree/master/tomcat/apache-tomcat-9.0.0.M22.tar.gz && \
+    wget http://archive.apache.org/dist/tomcat/tomcat-9/v9.0.0.M22/bin/apache-tomcat-9.0.0.M22.tar.gz && \
     tar -zxf apache-tomcat-9.0.0.M22.tar.gz && \
     ln -s apache-tomcat-9.0.0.M22 tomcat && \
     chown -hR tomcat9: tomcat apache-tomcat-9.0.0.M22
 
 RUN rm -r /opt/tomcat/webapps/ROOT
-RUN wget --quiet https://github.com/gatesch/mta1/tree/master/tomcat/mta-java.war && \
+RUN wget --quiet https://broyal.blob.core.windows.net/mta/mta-java.war && \
     cp mta-java.war /opt/tomcat/webapps/ROOT.war
 
 ENV CATALINA_PID /opt/tomcat/tomcat9.pid
